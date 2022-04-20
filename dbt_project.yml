@@ -1,0 +1,38 @@
+name: jaffle_shop_dbtvault
+profile: jaffle_shop_dbtvault
+version: '0.1.0'
+require-dbt-version: ['>=0.1.0', '<1.1.0']
+config-version: 2
+
+analysis-paths:
+  - analysis
+clean-targets:
+  - target
+seed-paths:
+  - data
+macro-paths:
+  - macros
+model-paths:
+  - models
+test-paths:
+  - tests
+target-path: target
+clean-targets:
+    - "target"
+    
+vars:
+  load_date: 'current_timestamp'
+  fb_account_id: 33203
+  usd_id: 22
+
+models:
+  jaffle_shop_dbtvault:
+    stage:
+      tags:
+        - 'stage'
+      materialized: view
+    bi:
+      tags:
+        - 'bi'
+      materialized: table
+

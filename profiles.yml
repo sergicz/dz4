@@ -1,0 +1,74 @@
+config:
+  send_anonymous_usage_stats: False
+  use_colors: True
+  partial_parse: True
+
+dbtvault_greenplum_demo:
+  outputs:
+    dev:
+      type: postgres
+      threads: 2
+      host: rc1b-jf58n868wxn1sw6i.mdb.yandexcloud.net
+      port: 6432
+      user: analytics
+      pass: analytics
+      dbname: analytics
+      schema: public
+      connect_timeout: 300000
+      keepalives_idle: 60
+      keepalives: 1
+  target: dev
+
+jaffle_shop_dbtvault:
+  outputs:
+
+    dev:
+      type: clickhouse
+      schema: default
+      host: rc1a-fjugeopbsk8ch106.mdb.yandexcloud.net
+      port: 9440
+      user: admin
+      password: clickhouse
+      secure: True
+
+  target: dev
+
+jaffle_shop_dbtvault1:
+  outputs:
+
+    dev:
+      type: clickhouse
+      schema: db
+      host: rc1c-njfxh96x4eg7o27c.mdb.yandexcloud.net
+      port: 9440
+      user: clickhouse
+      password: clickhouse
+      secure: True
+
+  target: dev
+
+jaffle_shop_old:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 1
+      host: 172.22.1.71
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: postgres
+      schema: public
+
+    prod:
+      type: redshift
+      method: iam
+      cluster_id: [cluster_id]
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      user: [prod_user]
+      dbname: [dbname]
+      schema: [prod_schema]
+
+  target: dev

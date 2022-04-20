@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: src
+    #database: clickhouse
+    schema: marketing_tutorial
+    tables:
+      - name: general_costs_facts
+      - name: currency_items_facts
+      - name: amocrm_leads_attributes
+      - name: amocrm_leads
+      - name: amocrm_leads_facts
+      - name: general_traffic
+      - name: general_dates
+     
+    
