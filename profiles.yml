@@ -19,7 +19,7 @@ dbtvault_greenplum_demo:
       keepalives: 1
   target: dev
 
-jaffle_shop_dbtvault:
+b24:
   outputs:
 
     dev:

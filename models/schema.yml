@@ -3,14 +3,18 @@ version: 2
 sources:
   - name: src
     #database: clickhouse
-    schema: marketing_tutorial
+    schema: default
     tables:
-      - name: general_costs_facts
-      - name: currency_items_facts
-      - name: amocrm_leads_attributes
-      - name: amocrm_leads
-      - name: amocrm_leads_facts
-      - name: general_traffic
-      - name: general_dates
+      - name: b24
+      - name: b24users
+      - name: b24departments
+      - name: regions
      
-    
+models:
+  - name: v_stg_b24
+    description: b24
+    columns:
+      - name: id
+        tests:
+          - not_null
+          - unique

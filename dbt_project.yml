@@ -1,5 +1,5 @@
-name: jaffle_shop_dbtvault
-profile: jaffle_shop_dbtvault
+name: b24
+profile: b24
 version: '0.1.0'
 require-dbt-version: ['>=0.1.0', '<1.1.0']
 config-version: 2
@@ -21,12 +21,18 @@ clean-targets:
     - "target"
     
 vars:
-  load_date: 'current_timestamp'
-  fb_account_id: 33203
-  usd_id: 22
+  load_date: 'today()'
+  #'current_timestamp'
+  beg_id: 0
+#  DBT_SOURCE_DATABASE: 'default'
+#  DBT_SOURCE_SHEMA: 'default'
 
 models:
-  jaffle_shop_dbtvault:
+  +on_schema_change: "sync_all_columns"
+#  +bind: false
+#  +pre-hook: "{{ logging.log_model.start_event() }}"
+#  +post-hook: "{{ logging.log_model.end_event() }}"
+  b24:
     stage:
       tags:
         - 'stage'
@@ -34,5 +40,4 @@ models:
     bi:
       tags:
         - 'bi'
-      materialized: table
-
+      materialized: incremental
