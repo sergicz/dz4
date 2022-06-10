@@ -24,10 +24,10 @@ jobs:
       - name: deploy dbt
         uses: kzzzr/mybi-dbt-action@v3
         env:
-          DBT_TARGET: ${{ secrets.DBT_TARGET }}
-          DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
+          DBT_TARGET: dev
+          DBT_SCHEMA: default
           DBT_HOST: ${{ secrets.DBT_HOST }}
-          DBT_PORT: ${{ secrets.DBT_PORT }}
+          DBT_PORT: 9440
           DBT_USER: ${{ secrets.DBT_USER }}
           DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
-          DBT_SECURE: ${{ secrets.DBT_SECURE }}
+          DBT_SECURE: True
