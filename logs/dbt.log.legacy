@@ -290,3 +290,7 @@
 2022-06-09 05:43:24.909126 (Thread-1): unclosed <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.17.0.2', 42854), raddr=('51.250.92.198', 9440)>
 2022-06-09 05:43:25.155847 (Thread-1): unclosed <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.17.0.2', 42856), raddr=('51.250.92.198', 9440)>
 2022-06-09 05:43:25.435253 (MainThread): unclosed <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.17.0.2', 42858), raddr=('51.250.92.198', 9440)>
+2022-06-09 14:53:14.212643 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2022-06-09 14:53:14.217125 (MainThread): 'soft_unicode' has been renamed to 'soft_str'. The old name will be removed in MarkupSafe 2.1.
+2022-06-09 14:53:14.580286 (Thread-1): unclosed <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.17.0.2', 42808), raddr=('51.250.92.198', 9440)>
+2022-06-09 14:53:14.998134 (MainThread): unclosed <ssl.SSLSocket fd=6, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.17.0.2', 42810), raddr=('51.250.92.198', 9440)>
