@@ -25,10 +25,10 @@ b24:
     dev:
       type: clickhouse
       schema: default
-      host: rc1a-fjugeopbsk8ch106.mdb.yandexcloud.net
+      host: "{{ env_var('DBT_HOST') }}"
       port: 9440
-      user: admin
-      password: clickhouse
+      user: "{{ env_var('DBT_USER') }}"
+      password: "{{ env_var('DBT_PASSWORD') }}"
       secure: True
 
   target: dev
