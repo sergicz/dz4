@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+name: Deploy dbt project
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+#  push:
+#    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+#  schedule:
+#    - cron: '0 5 * * *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  dbt_deploy:
+    runs-on: ubuntu-latest
+    steps:
+#      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+      - name: deploy dbt
+        uses: kzzzr/mybi-dbt-action@v3
+        env:
+          DBT_TARGET: ${{ secrets.DBT_TARGET }}
+          DBT_SCHEMA: ${{ secrets.DBT_SCHEMA }}
+          DBT_HOST: ${{ secrets.DBT_HOST }}
+          DBT_PORT: ${{ secrets.DBT_PORT }}
+          DBT_USER: ${{ secrets.DBT_USER }}
+          DBT_PASSWORD: ${{ secrets.DBT_PASSWORD }}
+          DBT_SECURE: ${{ secrets.DBT_SECURE }}
